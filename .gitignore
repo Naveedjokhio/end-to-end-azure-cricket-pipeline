@@ -1,0 +1,23 @@
+# Sensitive credentials — never commit these
+.bruin.yml
+bruin_project/.bruin.yml
+
+# Terraform state (contains connection strings, resource IDs)
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# Local data / test artifacts
+data/
+streamed_events.jsonl
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS/editor junk
+.DS_Store
+Thumbs.db

@@ -1,0 +1,43 @@
+
+Pipeline: cricket_mart_quality (.)
+  No issues found
+
+✓ Successfully validated 4 assets across 1 pipeline, all good.
+
+Interval: 2026-08-02T00:00:00Z - 2026-08-02T23:59:59Z
+
+Starting the pipeline execution...
+
+[15:24:10] Running:  default.team_summary_quality
+[15:24:10] Running:  default.batsman_summary_quality
+[15:24:10] Running:  default.bowler_summary_quality
+[15:24:10] Running:  default.over_summary_quality
+[15:24:10] Failed: default.bowler_summary_quality (0s)
+[15:24:10] Failed: default.batsman_summary_quality (0s)
+[15:24:10] Failed: default.team_summary_quality (0s)
+[15:24:10] Failed: default.over_summary_quality (0s)
+
+==================================================
+
+FAIL default.bowler_summary_quality UUUUUUUUU
+FAIL default.batsman_summary_quality UUUUUUUU
+FAIL default.team_summary_quality UUUUUUU
+FAIL default.over_summary_quality UUUUUUUU
+
+
+bruin run completed with failures in 0s
+
+ ✗ Assets executed      4 failed
+ ✗ Quality checks       32 skipped
+
+
+4 assets failed
+├── default.bowler_summary_quality
+│   └── connection 'databricks-default' not found in config file 'C:\Users\DELL\OneDrive\Desktop\end-to-end-azure-cricket-project/.bruin.yml' under environment 'default'
+├── default.batsman_summary_quality
+│   └── connection 'databricks-default' not found in config file 'C:\Users\DELL\OneDrive\Desktop\end-to-end-azure-cricket-project/.bruin.yml' under environment 'default'
+├── default.team_summary_quality
+│   └── connection 'databricks-default' not found in config file 'C:\Users\DELL\OneDrive\Desktop\end-to-end-azure-cricket-project/.bruin.yml' under environment 'default'
+└── default.over_summary_quality
+    └── connection 'databricks-default' not found in config file 'C:\Users\DELL\OneDrive\Desktop\end-to-end-azure-cricket-project/.bruin.yml' under environment 'default'
+

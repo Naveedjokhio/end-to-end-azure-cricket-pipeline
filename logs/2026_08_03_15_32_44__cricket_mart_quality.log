@@ -1,0 +1,95 @@
+
+Pipeline: cricket_mart_quality (.)
+  No issues found
+
+✓ Successfully validated 4 assets across 1 pipeline, all good.
+
+Interval: 2026-08-02T00:00:00Z - 2026-08-02T23:59:59Z
+
+Starting the pipeline execution...
+
+[15:32:44];22m Running:  default.team_summary_quality
+[15:32:44] Running:  default.over_summary_quality
+[15:32:44] Running:  default.batsman_summary_quality
+[15:32:44]2m Running:  default.bowler_summary_quality
+[15:32:47] Finished: default.bowler_summary_quality (3.536s)
+[15:32:47] Finished: default.batsman_summary_quality (3.536s)
+[15:32:47] Running:  default.bowler_summary_quality:custom-check:row_count_is_greater_than_zero
+[15:32:47] Running:  default.bowler_summary_quality:bowler:not_null
+[15:32:47] Running:  default.bowler_summary_quality:bowler:unique
+[15:32:47] Running:  default.bowler_summary_quality:runs_conceded:not_null
+[15:32:47] Running:  default.bowler_summary_quality:balls_bowled:not_null
+[15:32:47] Running:  default.bowler_summary_quality:balls_bowled:positive
+[15:32:47] Running:  default.bowler_summary_quality:economy:not_null
+[15:32:47] Running:  default.bowler_summary_quality:custom-check:runs_conceded_is_never_negative
+[15:32:47] Running:  default.bowler_summary_quality:custom-check:economy_is_within_a_plausible_t20_range_for_established_bowlers
+[15:32:47] Running:  default.batsman_summary_quality:balls_faced:positive
+[15:32:47] Running:  default.batsman_summary_quality:batter:not_null
+[15:32:47] Running:  default.batsman_summary_quality:batter:unique
+[15:32:47] Running:  default.batsman_summary_quality:total_runs:not_null
+[15:32:47] Running:  default.batsman_summary_quality:balls_faced:not_null
+[15:32:48] Finished: default.team_summary_quality (4.236s)
+[15:32:48] Running:  default.batsman_summary_quality:custom-check:total_runs_is_never_negative
+[15:32:48] Finished: default.over_summary_quality (4.236s)
+[15:32:48] Running:  default.batsman_summary_quality:custom-check:no_batter_has_more_runs_than_balls_faced_x_6
+[15:32:48] Finished: default.bowler_summary_quality:bowler:unique (704ms)
+[15:32:48] Running:  default.batsman_summary_quality:custom-check:row_count_is_greater_than_zero
+[15:32:48] Finished: default.bowler_summary_quality:bowler:not_null (704ms)
+[15:32:48] Running:  default.team_summary_quality:batting_team:not_null
+[15:32:48] Finished: default.bowler_summary_quality:runs_conceded:not_null (901ms)
+[15:32:48] Running:  default.team_summary_quality:batting_team:unique
+[15:32:48] Finished: default.batsman_summary_quality:batter:not_null (1.007s)
+[15:32:48] Running:  default.team_summary_quality:total_runs:not_null
+[15:32:48] Finished: default.bowler_summary_quality:balls_bowled:positive (1.007s)
+[15:32:48] Running:  default.team_summary_quality:total_runs:positive
+[15:32:48] Finished: default.bowler_summary_quality:economy:not_null (1.031s)
+[15:32:48] Running:  default.team_summary_quality:total_balls:not_null
+[15:32:48] Finished: default.batsman_summary_quality:balls_faced:positive (1.031s)
+[15:32:48] Running:  default.team_summary_quality:total_balls:positive
+[15:32:48] Finished: default.batsman_summary_quality:total_runs:not_null (1.299s)
+[15:32:48] Running:  default.team_summary_quality:custom-check:row_count_is_greater_than_zero
+[15:32:48] Finished: default.team_summary_quality:batting_team:not_null (595ms)
+[15:32:48] Running:  default.over_summary_quality:over:not_null
+[15:32:48] Finished: default.bowler_summary_quality:balls_bowled:not_null (1.303s)
+[15:32:48] Running:  default.over_summary_quality:over:unique
+[15:32:48] Finished: default.bowler_summary_quality:custom-check:row_count_is_greater_than_zero (1.319s)
+[15:32:48] Running:  default.over_summary_quality:total_runs:not_null
+[15:32:49] Finished: default.batsman_summary_quality:batter:unique (1.493s)
+[15:32:49] Running:  default.over_summary_quality:total_runs:positive
+[15:32:49] Finished: default.bowler_summary_quality:custom-check:runs_conceded_is_never_negative (1.494s)
+[15:32:49] Running:  default.over_summary_quality:total_balls:not_null
+[15:32:49] Finished: default.batsman_summary_quality:balls_faced:not_null (1.495s)
+[15:32:49] Running:  default.over_summary_quality:total_balls:positive
+[15:32:49] Finished: default.team_summary_quality:batting_team:unique (595ms)
+[15:32:49] Running:  default.over_summary_quality:run_rate:not_null
+[15:32:49] Finished: default.bowler_summary_quality:custom-check:economy_is_within_a_plausible_t20_range_for_established_bowlers (1.496s)
+[15:32:49] Running:  default.over_summary_quality:custom-check:exactly_20_overs_present
+[15:32:49] Finished: default.team_summary_quality:total_runs:not_null (494ms)
+[15:32:49] Finished: default.team_summary_quality:total_runs:positive (503ms)
+[15:32:49] Finished: default.batsman_summary_quality:custom-check:row_count_is_greater_than_zero (1.194s)
+[15:32:49] Finished: default.team_summary_quality:total_balls:positive (884ms)
+[15:32:49] Finished: default.team_summary_quality:total_balls:not_null (911ms)
+[15:32:49] Finished: default.batsman_summary_quality:custom-check:no_batter_has_more_runs_than_balls_faced_x_6 (1.242s)
+[15:32:49] Finished: default.batsman_summary_quality:custom-check:total_runs_is_never_negative (1.518s)
+[15:32:50] Finished: default.over_summary_quality:over:unique (1.211s)
+[15:32:50] Finished: default.over_summary_quality:total_balls:not_null (1.024s)
+[15:32:50] Finished: default.team_summary_quality:custom-check:row_count_is_greater_than_zero (1.218s)
+[15:32:50] Finished: default.over_summary_quality:total_balls:positive (1.021s)
+[15:32:50] Finished: default.over_summary_quality:run_rate:not_null (1.021s)
+[15:32:50] Finished: default.over_summary_quality:over:not_null (1.218s)
+[15:32:50] Finished: default.over_summary_quality:custom-check:exactly_20_overs_present (1.338s)
+[15:32:50] Finished: default.over_summary_quality:total_runs:not_null (1.555s)
+[15:32:50] Finished: default.over_summary_quality:total_runs:positive (1.381s)
+
+==================================================
+
+PASS default.bowler_summary_quality .........
+PASS default.batsman_summary_quality ........
+PASS default.team_summary_quality .......
+PASS default.over_summary_quality ........
+
+
+bruin run completed successfully in 6.41s
+
+ ✓ Assets executed      4 succeeded
+ ✓ Quality checks       32 succeeded

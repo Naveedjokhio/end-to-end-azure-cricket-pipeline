@@ -1,0 +1,53 @@
+{
+  "cmdline": [
+    "C:\\Users\\DELL\\.local\\bin\\bruin.exe",
+    "run",
+    "."
+  ],
+  "parameters": {
+    "downstream": false,
+    "startDate": "2026-08-02 00:00:00.000000",
+    "endDate": "2026-08-02 23:59:59.999999",
+    "workers": 16,
+    "environment": "",
+    "force": false,
+    "pushMetadata": false,
+    "noLogFile": false,
+    "fullRefresh": false,
+    "selector": "",
+    "tag": "",
+    "only": [],
+    "output": "",
+    "expUseWingetForUv": false,
+    "configFilePath": "",
+    "sensorMode": "",
+    "applyIntervalModifiers": false,
+    "annotations": ""
+  },
+  "metadata": {
+    "version": "v0.11.680",
+    "os": "windows"
+  },
+  "state": [
+    {
+      "name": "default.batsman_summary_quality",
+      "status": "succeeded"
+    },
+    {
+      "name": "default.bowler_summary_quality",
+      "status": "succeeded"
+    },
+    {
+      "name": "default.over_summary_quality",
+      "status": "succeeded"
+    },
+    {
+      "name": "default.team_summary_quality",
+      "status": "succeeded"
+    }
+  ],
+  "version": "1.0.0",
+  "timestamp": "2026-08-03T15:32:50.4929669+05:00",
+  "run_id": "2026_08_03_15_32_44",
+  "compatibility_hash": "34d8073f890b5d1b9dd9cf6e4d6eee6fc3727d6771ead64106f95352c93bdf35"
+}

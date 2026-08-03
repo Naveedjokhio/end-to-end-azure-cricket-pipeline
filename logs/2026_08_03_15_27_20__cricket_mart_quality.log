@@ -1,0 +1,104 @@
+m
+Pipeline: cricket_mart_quality (.)
+  No issues found
+
+✓ Successfully validated 4 assets across 1 pipeline, all good.
+
+Interval: 2026-08-02T00:00:00Z - 2026-08-02T23:59:59Z
+
+Starting the pipeline execution...
+
+[15:27:20];22m Running:  default.team_summary_quality
+[15:27:20]m Running:  default.batsman_summary_quality
+[15:27:20] Running:  default.bowler_summary_quality
+[15:27:20];22m Running:  default.over_summary_quality
+[15:27:31] Finished: default.team_summary_quality (10.977s)
+[15:27:31] Running:  default.team_summary_quality:custom-check:row_count_is_greater_than_zero
+[15:27:31] Running:  default.team_summary_quality:batting_team:unique
+[15:27:31] Running:  default.team_summary_quality:total_balls:not_null
+[15:27:31] Running:  default.team_summary_quality:total_runs:positive
+[15:27:31] Running:  default.team_summary_quality:total_runs:not_null
+[15:27:31] Running:  default.team_summary_quality:total_balls:positive
+[15:27:31] Finished: default.bowler_summary_quality (10.976s)
+[15:27:31] Running:  default.team_summary_quality:batting_team:not_null
+[15:27:31] Finished: default.over_summary_quality (10.98s)
+[15:27:31] Running:  default.bowler_summary_quality:custom-check:economy_is_within_a_plausible_t20_range
+[15:27:31] Running:  default.bowler_summary_quality:economy:not_null
+[15:27:31] Running:  default.bowler_summary_quality:bowler:not_null
+[15:27:31] Running:  default.bowler_summary_quality:bowler:unique
+[15:27:31] Running:  default.bowler_summary_quality:runs_conceded:not_null
+[15:27:31] Running:  default.bowler_summary_quality:runs_conceded:positive
+[15:27:31] Running:  default.bowler_summary_quality:balls_bowled:not_null
+[15:27:31] Running:  default.bowler_summary_quality:balls_bowled:positive
+[15:27:31] Finished: default.batsman_summary_quality (11.01s)
+[15:27:31] Running:  default.bowler_summary_quality:custom-check:row_count_is_greater_than_zero
+[15:27:34] Finished: default.team_summary_quality:custom-check:row_count_is_greater_than_zero (2.37s)
+[15:27:34] Running:  default.over_summary_quality:over:not_null
+[15:27:34] Finished: default.bowler_summary_quality:balls_bowled:positive (2.366s)
+[15:27:34] Running:  default.over_summary_quality:over:unique
+[15:27:34] Finished: default.bowler_summary_quality:balls_bowled:not_null (2.366s)
+[15:27:34] Running:  default.over_summary_quality:total_runs:not_null
+[15:27:34] Finished: default.team_summary_quality:batting_team:not_null (2.372s)
+[15:27:34] Running:  default.over_summary_quality:total_runs:positive
+[15:27:35] Finished: default.team_summary_quality:total_balls:not_null (3.274s)
+[15:27:35] Running:  default.over_summary_quality:total_balls:not_null
+[15:27:35] Finished: default.team_summary_quality:total_balls:positive (3.273s)
+[15:27:35] Running:  default.over_summary_quality:total_balls:positive
+[15:27:35] Finished: default.bowler_summary_quality:custom-check:row_count_is_greater_than_zero (3.547s)
+[15:27:35] Running:  default.over_summary_quality:run_rate:not_null
+[15:27:35] Finished: default.over_summary_quality:total_balls:positive (740ms)
+[15:27:35] Running:  default.over_summary_quality:custom-check:exactly_20_overs_present
+[15:27:35] Finished: default.over_summary_quality:total_balls:not_null (761ms)
+[15:27:35] Running:  default.batsman_summary_quality:batter:not_null
+[15:27:36] Finished: default.over_summary_quality:run_rate:not_null (971ms)
+[15:27:36] Running:  default.batsman_summary_quality:batter:unique
+[15:27:36] Finished: default.bowler_summary_quality:economy:not_null (4.634s)
+[15:27:36] Running:  default.batsman_summary_quality:total_runs:not_null
+[15:27:36] Finished: default.bowler_summary_quality:bowler:not_null (4.664s)
+[15:27:36] Running:  default.batsman_summary_quality:total_runs:positive
+[15:27:36] Finished: default.team_summary_quality:total_runs:not_null (4.684s)
+[15:27:36] Running:  default.batsman_summary_quality:balls_faced:not_null
+[15:27:36] Finished: default.batsman_summary_quality:batter:not_null (700ms)
+[15:27:36] Running:  default.batsman_summary_quality:balls_faced:positive
+[15:27:36] Finished: default.bowler_summary_quality:runs_conceded:not_null (4.83s)
+[15:27:36] Running:  default.batsman_summary_quality:custom-check:no_batter_has_more_runs_than_balls_faced_x_6
+[15:27:36] Finished: default.over_summary_quality:total_runs:not_null (2.683s)
+[15:27:36] Running:  default.batsman_summary_quality:custom-check:row_count_is_greater_than_zero
+[15:27:36] Finished: default.over_summary_quality:over:not_null (2.704s)
+[15:27:36] Finished: default.over_summary_quality:total_runs:positive (2.767s)
+[15:27:37] Finished: default.batsman_summary_quality:total_runs:not_null (914ms)
+[15:27:37] Finished: default.batsman_summary_quality:balls_faced:not_null (1.001s)
+[15:27:37] Finished: default.batsman_summary_quality:batter:unique (1.384s)
+[15:27:37] Failed: default.batsman_summary_quality:total_runs:positive (1.269s)
+[15:27:37] Finished: default.bowler_summary_quality:bowler:unique (5.943s)
+[15:27:37] Finished: default.over_summary_quality:custom-check:exactly_20_overs_present (2.079s)
+[15:27:37] Finished: default.team_summary_quality:total_runs:positive (6.118s)
+[15:27:38] Finished: default.batsman_summary_quality:custom-check:row_count_is_greater_than_zero (1.147s)
+[15:27:38] Finished: default.over_summary_quality:over:unique (4.606s)
+[15:27:39] Failed: default.bowler_summary_quality:runs_conceded:positive (7.231s)
+[15:27:39] Finished: default.batsman_summary_quality:custom-check:no_batter_has_more_runs_than_balls_faced_x_6 (2.862s)
+[15:27:39] Finished: default.batsman_summary_quality:balls_faced:positive (3.003s)
+[15:27:39] Finished: default.team_summary_quality:batting_team:unique (7.941s)
+[15:27:39] Failed: default.bowler_summary_quality:custom-check:economy_is_within_a_plausible_t20_range (7.941s)
+
+==================================================
+
+PASS default.team_summary_quality .......
+PASS default.bowler_summary_quality ...FF....
+PASS default.over_summary_quality ........
+PASS default.batsman_summary_quality ..F.....
+
+
+bruin run completed with failures in 18.922s
+
+ ✗ Assets executed      2 failed due to checks / 2 succeeded
+ ✗ Quality checks       3 failed / 29 succeeded
+
+
+2 assets failed
+├── default.batsman_summary_quality
+│   └── total_runs.positive - column 'total_runs' has 25 non-positive values
+└── default.bowler_summary_quality
+    ├── runs_conceded.positive - column 'runs_conceded' has 1 non-positive values
+    └── economy is within a plausible T20 range custom check - custom check 'economy is within a plausible T20 range' has returned 16 instead of the expected 0
+

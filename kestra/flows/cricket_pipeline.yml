@@ -1,0 +1,43 @@
+id: cricket_pipeline
+namespace: e2e.cricket
+
+description: >
+  Orchestrates the End to End Azure Cricket Project:
+  Cricsheet batch ingestion -> ADLS raw -> Databricks (Spark, dbt, Cricket_Mart)
+  -> Bruin quality gate. The streaming leg (simulated Event Hubs replay) runs
+  as its own long-lived flow, not on this schedule.
+
+tasks:
+  - id: download_cricsheet
+    type: io.kestra.plugin.scripts.python.Commands
+    containerImage: python:3.11-slim
+    beforeCommands:
+      - pip install requests
+    commands:
+      - python scripts/download_cricsheet.py --competition ipl --out /tmp/cricsheet_raw
+
+  - id: upload_to_adls_raw
+    type: io.kestra.plugin.azure.storage.blob.Upload
+    endpoint: "https://{{ secret('STORAGE_ACCOUNT_NAME') }}.blob.core.windows.net"
+    connectionString: "{{ secret('ADLS_CONNECTION_STRING') }}"
+    container: raw
+    from: /tmp/cricsheet_raw
+
+  - id: run_databricks_job
+    type: io.kestra.plugin.databricks.job.TriggerJob
+    databricksInstance: "{{ secret('DATABRICKS_HOST') }}"
+    token: "{{ secret('DATABRICKS_TOKEN') }}"
+    jobId: "{{ secret('DATABRICKS_SPARK_DBT_JOB_ID') }}"
+    wait: true
+
+  - id: run_bruin_quality_checks
+    type: io.kestra.plugin.scripts.shell.Commands
+    containerImage: ghcr.io/bruin-data/bruin:latest
+    commands:
+      - bruin validate ./bruin_project
+      - bruin run ./bruin_project --only-checks
+
+triggers:
+  - id: daily_schedule
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: "0 3 * * *"

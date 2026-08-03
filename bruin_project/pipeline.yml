@@ -1,0 +1,4 @@
+name: cricket_mart_quality
+schedule: "@daily"
+default_connections:
+  databricks: databricks-default
