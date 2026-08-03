@@ -8,7 +8,7 @@ analytics dashboard — all orchestrated end to end with Kestra.
 
 **Live dashboard:** https://adb-7405607340327595.15.azuredatabricks.net/dashboardsv3/01f18f02ee2215a0bbefecbf1fc1289b/published?o=7405607340327595
 
-## Architecture
+### Architecture
 
 ![Architecture diagram](docs/architecture.png)
 
